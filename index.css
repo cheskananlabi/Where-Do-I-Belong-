@@ -166,3 +166,20 @@ p {
     padding: 40px;
   }
 }
+
+/* SMALLER BUTTONS ON CELLPHONES */
+@media (max-width: 600px) {
+  .category-btn,
+  .btn-home {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 0 rgba(31, 111, 104, 0.85);
+  }
+
+  .category-btn:hover,
+  .btn-home:hover {
+    transform: none;
+  }
+}
+
