@@ -44,7 +44,7 @@ function initializeGamePage() {
     document.body.insertBefore(feedbackDiv, document.querySelector('.animal-grid'));
 
     // Add interactivity to each animal card
-    animalCards.forEach((card, index) => {
+        animalCards.forEach((card, index) => {
         card.style.cursor = 'pointer';
         card.style.transition = 'transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease';
         card.style.position = 'relative';
@@ -71,8 +71,8 @@ function initializeGamePage() {
                 showMessage(`✗ ${animalName} doesn't belong here!`, 'incorrect', card);
             }
             
-            // Update feedback
-            // Update feedback
+            // Correct answers
+            // Correct answers
             feedbackDiv.textContent = `Correct: ${correctCount}/${totalCorrect}`;
             feedbackDiv.style.color = correctCount === totalCorrect ? '#2d8f85' : '#333';
             
@@ -127,7 +127,7 @@ function checkAnimal(animalName, categoryName) {
     }
 }
 
-// Show temporary message on animal card
+// Message display for correct/incorrect answers
 function showMessage(message, type, element) {
     const messageEl = document.createElement('div');
     messageEl.textContent = message;
@@ -138,12 +138,12 @@ function showMessage(message, type, element) {
         transform: translate(-50%, -50%);
         background: ${type === 'correct' ? '#84fab0' : '#ff6b6b'};
         color: ${type === 'correct' ? '#2d8f85' : '#8b0000'};
-        padding: 12px 20px;
-        border-radius: 8px;
+        padding: 6px 10px;
+        border-radius: 6px;
         font-weight: 600;
         pointer-events: none;
         z-index: 10;
-        font-size: 0.9rem;
+        font-size: 0.6rem;
         white-space: nowrap;
     `;
     
@@ -152,7 +152,7 @@ function showMessage(message, type, element) {
     setTimeout(() => messageEl.remove(), 1500);
 }
 
-// Show completion message
+// Result display when the player completes the game
 function showGameComplete(correct, total) {
     const percentage = Math.round((correct / total) * 100);
     let message = '';
