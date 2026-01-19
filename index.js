@@ -26,16 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Initialize game page with animal interactions
-function initializeGamePage() {
+    // Initialize game page with animal interactions
+    function initializeGamePage() {
     const animalCards = document.querySelectorAll('.animal-card');
     const pageTitle = document.querySelector('h1').textContent;
     
+    //Total correct answers
     let correctCount = 0;
     let totalCorrect = animalCategories[pageTitle].length;
     let answered = new Set();
 
-    // Create feedback counter
+    // Users progress
     const feedbackDiv = document.createElement('div');
     feedbackDiv.id = 'feedback-panel';
     feedbackDiv.style.cssText = 'margin: 20px auto; padding: 15px 30px; background: rgba(255, 255, 255, 0.9); border-radius: 10px; font-size: 1.1rem; font-weight: 600; min-width: 300px;';
