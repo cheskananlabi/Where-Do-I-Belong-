@@ -1,8 +1,8 @@
 // Animal categorization data
 const animalCategories = {
-    "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara"],
-    "Air Animals": ["Eagle", "Dove", "Pigeon", "Owl", "Beetle", "Penguin", "Goose"],
-    "Water Animals": ["Turtle", "Crocodile", "Manta Ray", "Dolphin", "Mollusk", "Seal", "Penguin", "Stingray"]
+    "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara", "Beetle", "Ostrich"],
+    "Air Animals": ["Eagle", "Dove", "Pigeon", "Owl", "Goose", "Parrot", "Swan", "Sparrow", "Hummingbird", "Pelican"],
+    "Water Animals": ["Turtle", "Crocodile", "Manta Ray", "Dolphin", "Mollusk", "Seal", "Penguin", "Stingray", "Plankton", "Octopus"]
 };
 
 // Initialize event listeners when page loads
