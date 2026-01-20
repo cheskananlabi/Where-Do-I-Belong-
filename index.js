@@ -8,9 +8,9 @@ const animalCategories = {
 // Initialize event listeners when page loads
 document.addEventListener('DOMContentLoaded', function() {
     // Category button navigation on home page
-    const categoryButtons = document.querySelectorAll('.category-btn');
+    const categoryButtons = document.querySelectorAll('.category-btn'); //ang ibig sabihin ng querySelectorAll ay kinukuha niya lahat ng elements sa html na may class na category-btn.
     if (categoryButtons.length > 0) {
-        categoryButtons.forEach(button => {
+        categoryButtons.forEach(button => { 
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = this.getAttribute('data-target');
