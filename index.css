@@ -1,141 +1,181 @@
-/* RESET */
+/* ======================
+   RESET / UNIVERSAL STYLES
+   ====================== */
+
+/* 
+  * = universal selector
+  Pinipili nito lahat ng elemento sa HTML
+  -universal meaning para sa lahat, tinatawag nya lahat ng h1,div para gawin ang ganyang bagay
+*/
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin: 0;                 /* alisin lahat ng default space sa labas ng element */
+  padding: 0;                /* alisin lahat ng default space sa loob ng element */
+  box-sizing: border-box;    /* kasama ang padding at border sa width at height */
+  font-family: "Segoe UI", Tahoma, sans-serif; /* default font ng buong page */
 }
 
-/* BODY */
+/* ======================
+   BODY
+   ====================== */
+
+/* Body styles para sa buong page */
 body {
-  min-height: 100vh;
-  background: linear-gradient(150deg, #8fd3f4, #84fab0);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #333;
-  text-align: center;
-  padding: 20px;
+  min-height: 100vh; /* minimum height = buong screen viewport */
+  background: linear-gradient(150deg, #8fd3f4, #84fab0); /* gradient background */
+  display: flex; /* flex container para vertical stacking ng laman */
+  flex-direction: column; /* items naka-vertical mula sa taas pababa */
+  align-items: center; /* horizontally centered */
+  color: #333; /* default text color */
+  text-align: center; /* center aligned ang lahat ng text */
+  padding: 20px; /* spacing sa gilid */
 }
 
-/* HERO */
+/* ======================
+   HERO SECTION
+   ====================== */
+
+/* Hero container para sa title, description, at buttons */
 .hero {
-  margin-bottom: 24px;
-  max-width: 900px;
+  margin-bottom: 24px; /* space sa baba ng hero */
+  max-width: 900px;    /* hindi hihigit sa 900px ang lapad */
 }
 
+/* Hero actions container (buttons, etc) */
 .hero-actions {
-  margin-bottom: 32px;
+  margin-bottom: 32px; /* space sa ilalim ng buttons */
 }
 
-/* TITLE */
+/* ======================
+   TITLE
+   ====================== */
+
+/* Main heading */
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #1f4f5a;
+  font-size: 2.5rem; /* malaking font size para sa heading */
+  margin-bottom: 15px; /* space sa ilalim ng heading */
+  color: #1f4f5a; /* dark teal/blue color */
 }
 
-/* DESCRIPTION */
+/* ======================
+   DESCRIPTION / PARAGRAPH
+   ====================== */
+
+/* Paragraph / description text */
 p {
-  max-width: 600px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 28px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 18px;
-  border-radius: 12px;
+  max-width: 600px; /* limit ang width para readable */
+  font-size: 1.1rem; /* medyo malaki para easy basahin */
+  line-height: 1.6; /* spacing sa pagitan ng lines */
+  margin-bottom: 28px; /* space sa baba */
+  background: rgba(255, 255, 255, 0.85); /* semi-transparent white background */
+  padding: 18px; /* space sa loob */
+  border-radius: 12px; /* rounded corners */
 }
 
-/* CATEGORY BUTTONS */
+/* ======================
+   CATEGORY BUTTONS
+   ====================== */
+
+/* Container ng category buttons */
 #category-selection {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: center;
-  width: 100%;
+  display: flex; /* flex layout para sa buttons */
+  flex-wrap: wrap; /* kung maliit ang screen, mag-wrap ang buttons */
+  gap: 16px; /* space sa pagitan ng buttons */
+  justify-content: center; /* center horizontally */
+  width: 100%; /* full width ng container */
 }
 
-/* BUTTON SHARED STYLE */
-.category-btn,
-.btn-home {
-  appearance: none;
-  border: none;
-  cursor: pointer;
-  padding: 14px 26px;
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(180deg, #2d8f85, #1f6f68);
-  border-radius: 12px;
-  box-shadow: 0 8px 0 rgba(31, 111, 104, 0.9);
-  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.12s ease;
+/* ======================
+   BUTTON SHARED STYLE
+   ====================== */
+
+/* General style para sa lahat ng category buttons */
+.category-btn {
+  border: none; /* walang default border */
+  cursor: pointer; /* hand cursor kapag hover */
+  padding: 14px 26px; /* internal spacing sa button */
+  font-size: 1.05rem; /* medyo malaking font */
+  font-weight: 700; /* bold */
+  color: #fff; /* white text */
+  background: linear-gradient(180deg, #2d8f85, #1f6f68); /* gradient green button */
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 8px 0 rgba(31, 111, 104, 0.9); /* shadow para 3D effect */
+  transition:
+    transform 0.16s ease, /* smooth movement kapag pinindot */
+    box-shadow 0.16s ease, 
+    filter 0.12s ease;
 }
 
-/* BUTTON EFFECTS */
-.category-btn:hover,
-.btn-home:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.05);
-}
-
+/* Active / pressed state para sa buttons at home button */
 .category-btn:active,
 .btn-home:active {
-  transform: translateY(2px);
-  box-shadow: 0 4px 0 rgba(31, 111, 104, 0.85);
+  transform: translateY(2px); /* lumulubog kapag pinindot */
+  box-shadow: 0 4px 0 rgba(31, 111, 104, 0.85); /* mas maliit ang shadow */
 }
 
-.category-btn:focus-visible,
-.btn-home:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 6px rgba(45, 143, 133, 0.18),
-              0 8px 0 rgba(31, 111, 104, 0.9);
-}
+/* ======================
+   ANIMAL GRID
+   ====================== */
 
-/* ANIMAL GRID */
+/* Grid layout para sa animal cards */
 .animal-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 14px;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 20px;
+  display: grid; /* CSS Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+  /* responsive: automatic adjust ang columns, minimum width 140px */
+  gap: 14px; /* spacing sa pagitan ng grid items */
+  width: 100%; /* full width ng container */
+  max-width: 1200px; /* limit sa malalaking screen */
+  margin-top: 20px; /* space sa itaas ng grid */
 }
 
-/* IMAGE CARD */
+/* ======================
+   IMAGE CARD
+   ====================== */
+
+/* Container ng bawat animal card */
 .animal-card {
-  width: 100%;
+  width: 100%; /* full width ng grid cell */
 }
 
-/* IMAGE — FIXED FOR MOBILE VISIBILITY */
+/* ======================
+   IMAGE — FIXED FOR MOBILE VISIBILITY
+   ====================== */
+
+/* Animal image styling */
 .animal-img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;      /* 👈 guarantees visible height on phones */
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  display: block;
+  width: 100%; /* full width ng card */
+  height: auto; /* height adjust automatically */
+  aspect-ratio: 4 / 3; /* fixed ratio para visible sa mobile */
+  object-fit: cover; /* hindi mae-stretch, crop kung kailangan */
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* subtle shadow */
+  display: block; /* remove inline gap */
 }
 
-/* BACK LINK */
+/* ======================
+   BACK LINK
+   ====================== */
+
 .back-link {
-  align-self: flex-start;
-  margin-bottom: 16px;
+  align-self: flex-start; /* naka-left align */
+  margin-bottom: 16px; /* space sa ilalim */
 }
 
 .back-link a {
-  text-decoration: none;
+  text-decoration: none; /* no underline */
   font-weight: 600;
   color: #1f4f5a;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 8px 16px; /* clickable area */
+  border-radius: 8px; /* rounded corners */
 }
 
 .back-link a:hover {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.6); /* highlight on hover */
 }
 
-/* HOME BUTTON */
+/* ======================
+   HOME BUTTON
+   ====================== */
+
 .btn-home {
   align-self: flex-start;
   margin-bottom: 20px;
@@ -143,26 +183,54 @@ p {
 
 .btn-home a {
   text-decoration: none;
-  color: inherit;
+  color: inherit; /* inherits parent color */
 }
 
-/* MOBILE ENHANCEMENT */
+/* ======================
+   MOBILE ENHANCEMENT
+   ====================== */
+
 @media (max-width: 600px) {
   .animal-img {
-    aspect-ratio: 3 / 2;  /* taller images on phones */
+    aspect-ratio: 3 / 2; /* mas mataas ang image sa phones */
   }
 }
 
-/* TABLET */
+/* ======================
+   TABLET
+   ====================== */
+
 @media (min-width: 768px) {
   body {
-    padding: 24px;
+    padding: 24px; /* konting mas maluwag sa tablet */
   }
 }
 
-/* DESKTOP / LARGE SCREENS */
+/* ======================
+   DESKTOP / LARGE SCREENS
+   ====================== */
+
 @media (min-width: 1200px) {
   body {
-    padding: 40px;
+    padding: 40px; /* mas maluwag sa malalaking screens */
+  }
+}
+
+/* ======================
+   SMALLER BUTTONS ON CELLPHONES
+   ====================== */
+
+@media (max-width: 600px) {
+  .category-btn,
+  .btn-home {
+    padding: 10px 16px; /* mas maliit na button */
+    font-size: 0.9rem;   /* maliit na font */
+    border-radius: 10px;
+    box-shadow: 0 6px 0 rgba(31, 111, 104, 0.85); /* adjust shadow for small button */
+  }
+
+  .category-btn:hover,
+  .btn-home:hover {
+    transform: none; /* disable hover transform sa phone */
   }
 }
