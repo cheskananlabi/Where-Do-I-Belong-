@@ -1,12 +1,12 @@
-// Animal categorization data
-const animalCategories = {
+    // Categories of animals and where they belong
+    const animalCategories = {
     "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara", "Beetle", "Ostrich"],
     "Air Animals": ["Eagle", "Dove", "Pigeon", "Owl", "Goose", "Parrot", "Swan", "Sparrow", "Hummingbird", "Pelican"],
     "Water Animals": ["Turtle", "Crocodile", "Manta Ray", "Dolphin", "Mollusk", "Seal", "Penguin", "Stingray", "Plankton", "Octopus"]
 };
 
-// Initialize event listeners when page loads
-document.addEventListener('DOMContentLoaded', function() {
+    // Initialize event listeners when page loads
+    document.addEventListener('DOMContentLoaded', function() {
     // Category button navigation on home page
     const categoryButtons = document.querySelectorAll('.category-btn');
     if (categoryButtons.length > 0) {
