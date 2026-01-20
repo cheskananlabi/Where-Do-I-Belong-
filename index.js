@@ -1,6 +1,6 @@
 // Animal categorization data
 const animalCategories = {
-    "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara", "Beetle", "Ostrich"],
+    "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara", "Beetle", "brontosaurus"],
     "Air Animals": ["Eagle", "Dove", "Pigeon", "Owl", "Goose", "Parrot", "Swan", "Sparrow", "Hummingbird", "Pelican"],
     "Water Animals": ["Turtle", "Crocodile", "Manta Ray", "Dolphin", "Mollusk", "Seal", "Penguin", "Stingray", "Plankton", "Octopus"]
 };
