@@ -1,16 +1,19 @@
 // Animal categorization data
-const animalCategories = {
-    "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara"],
+const animalCategories = { //animalcategories ay object na may key value 
+    "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara"], // ang mga key ay tatlo 
+    // ang land, air, water
     "Air Animals": ["Eagle", "Dove", "Pigeon", "Owl", "Beetle", "Penguin", "Goose"],
     "Water Animals": ["Turtle", "Crocodile", "Manta Ray", "Dolphin", "Mollusk", "Seal", "Penguin", "Stingray"]
+    //value naman ay ang pag kakaayos ng mga animals 
 };
 
 // Initialize event listeners when page loads
+//ginagamit ito para sure na ma lloaded muna lahat g HTML bago ma buksan nag js 
 document.addEventListener('DOMContentLoaded', function() {
     // Category button navigation on home page
-    const categoryButtons = document.querySelectorAll('.category-btn');
+    const categoryButtons = document.querySelectorAll('.category-btn'); //ang ibig sabihin ng querySelectorAll ay kinukuha niya lahat ng elements sa html na may class na category-btn.
     if (categoryButtons.length > 0) {
-        categoryButtons.forEach(button => {
+        categoryButtons.forEach(button => { 
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = this.getAttribute('data-target');
