@@ -1,13 +1,14 @@
 // Animal categorization data
-const animalCategories = {
+    const animalCategories = {
     "Land Animals": ["Iguana", "Tortoise", "Giraffe", "Rhinoceros", "Okapi", "Panda", "Elephant", "Capybara", "Beetle", "Brontosaurus"],
     "Air Animals": ["Eagle", "Dove", "Pigeon", "Owl", "Goose", "Parrot", "Swan", "Sparrow", "Hummingbird", "Pelican"],
     "Water Animals": ["Turtle", "Crocodile", "Manta Ray", "Dolphin", "Mollusk", "Seal", "Penguin", "Stingray", "Plankton", "Octopus"]
 };
 
 // Initialize event listeners when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    // Category button navigation on home page
+    document.addEventListener('DOMContentLoaded', function() {
+        
+// Category button navigation on home page
     const categoryButtons = document.querySelectorAll('.category-btn'); //ang ibig sabihin ng querySelectorAll ay kinukuha niya lahat ng elements sa html na may class na category-btn.
     if (categoryButtons.length > 0) {
         categoryButtons.forEach(button => { 
@@ -19,24 +20,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Animal card interaction on category pages
+// Animal card interaction on category pages
     const animalCards = document.querySelectorAll('.animal-card');
     if (animalCards.length > 0) {
         initializeGamePage();
     }
-});
+    });
 
-    // Initialize game page with animal interactions
+// Initialize game page with animal interactions
     function initializeGamePage() {
     const animalCards = document.querySelectorAll('.animal-card');
     const pageTitle = document.querySelector('h1').textContent;
     
-    //Total correct answers
+//Total correct answers
     let correctCount = 0;
     let totalCorrect = animalCategories[pageTitle].length;
     let answered = new Set();
 
-    // Users progress
+// Users progress
     const feedbackDiv = document.createElement('div');
     feedbackDiv.id = 'feedback-panel';
     feedbackDiv.style.cssText = 'margin: 20px auto; padding: 15px 30px; background: rgba(255, 255, 255, 0.9); border-radius: 10px; font-size: 1.1rem; font-weight: 600; min-width: 300px;';
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.insertBefore(feedbackDiv, document.querySelector('.animal-grid'));
 
-    // Add interactivity to each animal card
+// Add interactivity to each animal card
         animalCards.forEach((card, index) => {
         card.style.cursor = 'pointer';
         card.style.transition = 'transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease';
@@ -58,30 +59,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
             answered.add(index);
             
-            // Check if animal belongs in this category
-            const isCorrect = checkAnimal(animalName, pageTitle);
+// Check if animal belongs in this category
+    const isCorrect = checkAnimal(animalName, pageTitle);
             
-            if (isCorrect) {
-                correctCount++;
-                card.style.filter = 'brightness(0.7) saturate(0.5)';
-                card.style.opacity = '0.6';
-                showMessage(`✓ ${animalName} belongs here!`, 'correct', card);
-            } else {
-                card.style.filter = 'brightness(1.2) grayscale(100%)';
-                card.style.opacity = '0.7';
-                showMessage(`✗ ${animalName} doesn't belong here!`, 'incorrect', card);
-            }
+    if (isCorrect) {
+        correctCount++;
+        card.style.filter = 'brightness(0.7) saturate(0.5)';
+        card.style.opacity = '0.6';
+        showMessage(`✓ ${animalName} belongs here!`, 'correct', card);
+    } else {
+        card.style.filter = 'brightness(1.2) grayscale(100%)';
+        card.style.opacity = '0.7';
+        showMessage(`✗ ${animalName} doesn't belong here!`, 'incorrect', card);
+    }
             
-            // Correct answers
-            // Correct answers
-            feedbackDiv.textContent = `Correct: ${correctCount}/${totalCorrect}`;
-            feedbackDiv.style.color = correctCount === totalCorrect ? '#2d8f85' : '#333';
+    // Correct answers
+    // Correct answers
+        feedbackDiv.textContent = `Correct: ${correctCount}/${totalCorrect}`;
+        feedbackDiv.style.color = correctCount === totalCorrect ? '#2d8f85' : '#333';
             
-            // Check if game is complete (all correct answers found)
-            if (correctCount === totalCorrect) {
-                setTimeout(() => showGameComplete(correctCount, totalCorrect), 800);
-            }
-        });
+    // Check if game is complete (all correct answers found)
+        if (correctCount === totalCorrect) {
+            setTimeout(() => showGameComplete(correctCount, totalCorrect), 800);
+        }
+    });
 
         card.addEventListener('mouseover', function() {
             if (!answered.has(index)) {
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 // Check if animal belongs in the current category using if-else
-function checkAnimal(animalName, categoryName) {
+    function checkAnimal(animalName, categoryName) {
     const animals = animalCategories[categoryName];
     
     if (!animals) {
@@ -129,7 +130,7 @@ function checkAnimal(animalName, categoryName) {
 }
 
 // Message display for correct/incorrect answers
-function showMessage(message, type, element) {
+    function showMessage(message, type, element) {
     const messageEl = document.createElement('div');
     messageEl.textContent = message;
     messageEl.style.cssText = `
@@ -153,8 +154,8 @@ function showMessage(message, type, element) {
     setTimeout(() => messageEl.remove(), 1500);
 }
 
-// Result display when the player completes the game
-function showGameComplete(correct, total) {
+// Result will pop-up when the game is already done
+    function showGameComplete(correct, total) {
     const percentage = Math.round((correct / total) * 100);
     let message = '';
     
