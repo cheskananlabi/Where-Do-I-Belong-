@@ -4,14 +4,14 @@
 
 /* 
   * = universal selector
-  Pinipili nito lahat ng elemento sa HTML
-  -universal meaning para sa lahat, tinatawag nya lahat ng h1,div para gawin ang ganyang bagay
+ 
+  -lahat ng element sa html ay gagwin ang ustos 
 */
 * {
-  margin: 0;                 /* alisin lahat ng default space sa labas ng element */
-  padding: 0;                /* alisin lahat ng default space sa loob ng element */
-  box-sizing: border-box;    /* kasama ang padding at border sa width at height */
-  font-family: "Segoe UI", Tahoma, sans-serif; /* default font ng buong page */
+  margin: 0;                 /* to create space around elements, outside of any defined borders */
+  padding: 0;                /*  generate space around, insnide of an element's content, */
+  box-sizing: border-box;    /* defines how to calculate the width and height of an element */
+  font-family: "Segoe UI", Tahoma, sans-serif; /* property specifies the font for an element.  */
 }
 
 /* ======================
@@ -20,13 +20,12 @@
 
 /* Body styles para sa buong page */
 body {
-  min-height: 100vh; /* minimum height = buong screen viewport */
-  background: linear-gradient(150deg, #8fd3f4, #84fab0); /* gradient background */
-  display: flex; /* flex container para vertical stacking ng laman */
-  flex-direction: column; /* items naka-vertical mula sa taas pababa */
-  align-items: center; /* horizontally centered */
-  color: #333; /* default text color */
-  text-align: center; /* center aligned ang lahat ng text */
+  min-height: 100vh; /* property defines the minimum height of an element. */
+  background: linear-gradient(150deg, #8fd3f4, #84fab0); /* let you display smooth transitions between two or more colors within an element. */
+  display: flex; /* is an important CSS property for controlling layout */
+  flex-direction: column; /* ang pilay ay pa column */
+  align-items: center; /* position ng pila nila */
+  text-align: center; /*lahat ng text sa body ay sa center lang*/
   padding: 20px; /* spacing sa gilid */
 }
 
@@ -35,7 +34,7 @@ body {
    ====================== */
 
 /* Hero container para sa title, description, at buttons */
-.hero {
+  .hero {
   margin-bottom: 24px; /* space sa baba ng hero */
   max-width: 900px;    /* hindi hihigit sa 900px ang lapad */
 }
@@ -77,10 +76,10 @@ p {
 
 /* Container ng category buttons */
 #category-selection {
-  display: flex; /* flex layout para sa buttons */
-  flex-wrap: wrap; /* kung maliit ang screen, mag-wrap ang buttons */
+  display: flex; /*lahat ng iteam o children ay nakalagay sa isang row kahit na masikip na like me */
+  flex-wrap: wrap; /*pag wala nang space sa row, automatic lumipat sa next line ang items. */
   gap: 16px; /* space sa pagitan ng buttons */
-  justify-content: center; /* center horizontally */
+  justify-content: center; /* property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally). */
   width: 100%; /* full width ng container */
 }
 
@@ -91,18 +90,18 @@ p {
 /* General style para sa lahat ng category buttons */
 .category-btn {
   border: none; /* walang default border */
-  cursor: pointer; /* hand cursor kapag hover */
+  cursor: pointer; /* pag nilagay mo sa btn magiging kamay ang icon ng mouse */
   padding: 14px 26px; /* internal spacing sa button */
   font-size: 1.05rem; /* medyo malaking font */
-  font-weight: 700; /* bold */
+  font-weight: 700; /* kung gaano ka kapal ang mga letters */
   color: #fff; /* white text */
   background: linear-gradient(180deg, #2d8f85, #1f6f68); /* gradient green button */
   border-radius: 12px; /* rounded corners */
   box-shadow: 0 8px 0 rgba(31, 111, 104, 0.9); /* shadow para 3D effect */
   transition:
-    transform 0.16s ease, /* smooth movement kapag pinindot */
-    box-shadow 0.16s ease, 
-    filter 0.12s ease;
+  transform 0.16s ease,   /* para sa smooth na galaw (scale, move, rotate) */
+  box-shadow 0.16s ease,  /* para sa dahan-dahang pagbabago ng anino */
+  filter 0.12s ease;      /* para sa smooth na filter effects (brightness, blur, etc.) */
 }
 
 /* Active / pressed state para sa buttons at home button */
@@ -144,7 +143,7 @@ p {
 .animal-img {
   width: 100%; /* full width ng card */
   height: auto; /* height adjust automatically */
-  aspect-ratio: 4 / 3; /* fixed ratio para visible sa mobile */
+  aspect-ratio: 4 / 3; /* nagl-lock ng proporsyon ng lapad at taas ng isang element. */
   object-fit: cover; /* hindi mae-stretch, crop kung kailangan */
   border-radius: 10px; /* rounded corners */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12); /* subtle shadow */
